@@ -8,7 +8,6 @@ Welcome to the Pong Game! This is a simple implementation of the classic Pong ga
 - [Installation](#installation)
 - [How to Play](#how-to-play)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 Pong is one of the earliest arcade video games and is a table tennis sports game featuring simple two-dimensional graphics. This project recreates the classic experience and serves as a fun project to improve programming skills with Python and Pygame.
@@ -28,5 +27,12 @@ To play the game, you need to have Python and Pygame installed on your machine.
 
 ### Installing Pygame
 You can install Pygame using pip:
-```bash
+
 pip install pygame
+
+## how-to-play
+
+python start.py
+
+## Contributing
+If you'd like to be added to this list, please make a contribution and we'll be happy to include your name!
