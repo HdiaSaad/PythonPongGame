@@ -137,7 +137,7 @@ class Main:
                 self.p.update(0,"right")
 
             for square in self.squares[:]:  # Use a copy of the list for safe removal
-                if square.check_collision(self.ball):
+                if square.check_collision(self.ball) & self.p.touched:
                     print("Collision detected!")
                     self.squares.remove(square)  # Remove the square
                     if (len(self.squares) <= 0):
@@ -146,7 +146,7 @@ class Main:
                     break  # Break to avoid modifying the list during iteration
             self.screen.fill("grey")
             self.ball.move()
-            self.ball.check_collision_with_edges(self.width, self.height,self.p)
+            self.ball.check_collision_with_edges(self.width, self.height,self.p,self.p.setTouched)
             # fill the screen with a color to wipe away anything from last frame
             
             self.p.draw(self.screen)

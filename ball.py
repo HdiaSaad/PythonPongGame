@@ -18,12 +18,13 @@ class Ball:
         self.x += self.speed[0]
         self.y += self.speed[1]
 
-    def check_collision_with_edges(self, width, height,player):
+    def check_collision_with_edges(self, width, height,player,BallTouchedPlayer):
         player_rect = pygame.Rect(player.x, player.y + (height - 40), player.width, player.height)
         ball_rect = pygame.Rect(self.x - self.radius, self.y - self.radius, self.radius * 2, self.radius * 2)
             #ball hit the player
         if player_rect.colliderect(ball_rect):
             self.speed = (self.speed[0], -self.speed[1])
+            BallTouchedPlayer(True)
             pygame.mixer.music.load("assets/touch.mp3")
             pygame.mixer.music.play()
             #print(player.y)
