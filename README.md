@@ -2,6 +2,8 @@
 
 Welcome to the Pong Game! This is a simple implementation of the classic Pong game, created from scratch using Python and the Pygame library. This project is a starting point for fun and learning, and everyone is invited to participate and contribute!
 
+![Demo](/assets/PythonPongGame.gif)
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
