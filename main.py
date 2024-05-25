@@ -19,7 +19,7 @@ class Main:
     p = pygame.Rect(0, 0, 0, 0)
     bar = pygame.Rect(0, 0, 0, 0)
     sq = pygame.Rect(0, 0, 0, 0)
-    squares = [Square(60,20,10,10),Square(60,20,80,10),Square(60,20,150,10),Square(60,20,220,10)]
+    squares =  pygame.Rect(0, 0, 0, 0)
     score = 4
     LevelIsGenerated = False
     def __init__(self):
@@ -28,7 +28,7 @@ class Main:
         pygame.display.set_caption("Py Game 1.0")
         self.clock = pygame.time.Clock()
         self.bar = Lifebar(self.width)
-        self.squares = [Square(60,20,10,10),Square(60,20,80,10),Square(60,20,150,10),Square(60,20,220,10)]
+        self.squares = self.creatLevel()
         self.score = 4
 
     def check_score(self):
@@ -58,7 +58,7 @@ class Main:
                         paused = False
                         self.ball = Ball(self.screen, self.RED, random.randint(20, self.width-10), random.randint(20, self.height // 2), 15, (3, 3),self.check_score)
                         self.score = 4
-                        self.squares = [Square(60,20,10,10),Square(60,20,80,10),Square(60,20,150,10),Square(60,20,220,10)]
+                        self.squares = self.g
                         self.bar.updateScore(self.score)
                     if quit_button.collidepoint(mouse_pos):
                         pygame.display.quit()
@@ -118,7 +118,11 @@ class Main:
             square.draw(self.screen)
         #pygame.display.flip()
 
-
+    def creatLevel(self):
+        carwat_1 = [Square(60,20,30,30),Square(60,20,100,30),Square(60,20,170,30),Square(60,20,240,30),Square(60,20,310,30),Square(60,20,380,30),Square(60,20,450,30),Square(60,20,520,30),Square(60,20,590,30),Square(60,20,660,30)]
+        carwat_2 = [Square(60,20,10,10),Square(60,20,80,10),Square(60,20,150,10),Square(60,20,220,10)]
+        return carwat_1
+    
     def start(self):
         self.__init__()
         self.p = player.player(self.screen,60,20)
@@ -176,3 +180,4 @@ class Main:
         pygame.mixer.music.play()
         pygame.time.wait(4000)
         self.start()
+    
